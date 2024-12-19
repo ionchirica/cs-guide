@@ -1,0 +1,90 @@
+% !TEX root = ./main.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% preamble %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt,oneside]{book}
+%%%%%%%%%%%%%%%%%%% packages %%%%%%%%%%%%%%%%%
+
+\input{./config.tex}
+%%%%%%%%%%%%%%%%%%%%% glossaries %%%%%%%%%%%%%%%%%
+\input{./glossaries.tex}
+%%%%%%%%%%%%%%%%%%%%% glossaries %%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%% glossaries-extra %%%%%%%%%%%%%%%%%
+% \usepackage[record,abbreviations,symbols,stylemods={list,tree,mcols}]{glossaries-extra}
+%%%%%%%%%%%%%%%%%%%%% glossaries-extra %%%%%%%%%%%%%%%%%
+
+\input{./macros.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% begin of document %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title{\bf \huge Computer Science Student Guide}
+\author{Ion Chirica}
+\date{Update on \today}
+\maketitle
+\setcounter{tocdepth}{2}
+\setcounter{minitocdepth}{1} 
+
+\begin{multicols}{2}
+    \dominitoc% Initialization
+    \adjustmtc[2]% chp number shift for mini-toc
+    \tableofcontents
+    \label{toc-contents}
+\end{multicols}
+
+% 	\listoffigures
+% 	% \listoftables
+% \begin{multicols}{2}
+% 	\listoftheorems[ignoreall,show={theorem}]
+% \end{multicols}
+
+% 	\renewcommand{\listtheoremname}{List of Definitions}
+% \begin{multicols}{2}
+% 	\listoftheorems[ignoreall,show={definition}]
+% \end{multicols}
+
+	% \printglossaries
+	% \printglossary[type=\acronymtype]
+	\printglossary
+	% \printglossary[title=List of terms, toctitle=List of terms]
+
+	% bib2gls
+	% \printunsrtglossaries % print all types
+	% \printunsrtglossary[type={abbreviations},title=List of Abbreviations,style=listgroup]
+	% \printunsrtglossary[type={abbreviations},title=List of Abbreviations,style=listhypergroup] % doesn't work
+	% \printunsrtglossary[type={symbols},title=List of Symbols,style=listgroup]
+	% \printunsrtglossary % main entry
+
+%%%%%%%%%%%%%%%Content%%%%%%%%%%%%%%%
+% \mainmatter % separat the number of toc and mainmatter
+\input{./chapter/preface.tex}
+
+\part{Operating System}
+\input{./chapter/operating_system.tex}
+
+\part{Text Editor}
+\input{./chapter/text_editor.tex}
+
+\part{Git}
+\input{./chapter/git.tex}
+
+\part{Resources}
+\input{./chapter/resources.tex}
+
+% \begin{appendices}
+% \input{./chapter/appendix.tex}
+% \end{appendices}
+
+\backmatter
+
+%%%%%%%%%%%%%%% Reference %%%%%%%%%%%%%%%
+
+\printbibliography[heading=bibintoc]
+\printindex
+
+\end{document}
+
